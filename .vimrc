@@ -1,5 +1,6 @@
 scriptencoding UTF-8
 set encoding=UTF-8
+
 call plug#begin('~/.vim/plugged')
 
 Plug 'arcticicestudio/nord-vim'
@@ -9,8 +10,8 @@ Plug 'lifepillar/vim-solarized8'
 Plug 'gruvbox-community/gruvbox'
 Plug 'itchyny/lightline.vim'
 Plug 'https://github.com/scrooloose/nerdtree.git'
-Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'scrooloose/nerdcommenter'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'sheerun/vim-polyglot'
@@ -23,20 +24,41 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'tpope/vim-surround'
 
 call plug#end()
+
+" Install new plugin as soon as vim starts
 autocmd VimEnter *
   \ if !empty(filter(copy(g:plugs), '!isdirectory(v:val.dir)'))
   \|  PlugInstall | q
   \| endif
 
+" Enable relative line number
 set nu rnu
+" Make tabs as wide as two spaces
 set tabstop=2 shiftwidth=2 expandtab
+" Enable autoindent
 set autoindent
-
+" Always show status line
 set laststatus=2
+" Hide the current mode
 set noshowmode
-
 " Send all vim registers to the mac clipboard
 set clipboard=unnamed
+" Enable mouse in all modes
+set mouse=a
+" Manage cursor line
+set cursorline
+
+" Nerdtree configs
+let g:NERDTreeWinPos="right"
+let NERDTreeShowHidden=1
+let g:NERDTreeIgnore=['^node_modules$']
+
+" Add spaces after comment delimiters by default
+let g:NERDSpaceDelims=1
+
+" Nerdtree maps
+map <C-n> :NERDTreeToggle<CR>
+map <leader>r :NERDTreeFind<CR>
 
 function! CocCurrentFunction()
     return get(b:, 'coc_current_function', '')
@@ -57,16 +79,7 @@ let g:lightline = {
   \ 'subseparator': { 'left': "\ue0b1", 'right': "\ue0b3" }
   \ }
 
-" Nord Config
-let g:nord_cursor_line_number_background=1
-
-map <C-n> :NERDTreeToggle<CR>
-map <leader>r :NERDTreeFind<CR>
-
-let g:NERDTreeWinPos="right"
-let NERDTreeShowHidden=1
-let g:NERDTreeIgnore=['^node_modules$']
-
+" Theme configs
 if (has("termguicolors"))
   set termguicolors
 endif
@@ -77,12 +90,6 @@ set background=dark
 " Gruvbox has 'hard', 'medium' (default) and 'soft' contrast options.
 let g:gruvbox_contrast_dark='hard'
 
-" Change background of SignColumn for gruvbox theme
-" let g:gruvbox_sign_column='dark0_hard'
-
-" For italics in monokai theme
-" let g:vim_monokai_tasty_italic = 1
-
 colorscheme gruvbox 
 " For Gruvbox to look correct in terminal Vim you'll want to source a palette
 " script that comes with the Gruvbox plugin.
@@ -90,17 +97,14 @@ colorscheme gruvbox
 " Add this to your ~/.profile file:
 "   source "$HOME/.vim/plugged/gruvbox/gruvbox_256palette.sh"
 
-set cursorline
-hi cursorline cterm=NONE term=NONE
-hi cursorlineNr cterm=NONE term=NONE
-autocmd WinEnter * setlocal cursorline
-autocmd WinLeave * setlocal nocursorline
+" Nord Config
+let g:nord_cursor_line_number_background=1
+
+" Added here to make syntax highlight work with gruvbox
+syntax on
 
 " For COC Prettier
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
-
-" Add spaces after comment delimiters by default
-let g:NERDSpaceDelims=1
 
 " COC Config
 let g:coc_status_error_sign='❌ '
@@ -113,9 +117,6 @@ let g:coc_global_extensions = [
   \ 'coc-json', 
   \ 'coc-tsserver'
   \ ]
-
-" Added here to make syntax highlight work with gruvbox
-syntax on
 
 " fzf file fuzzy search that respects .gitignore
 " If in git directory, show only files that are committed, staged, or unstaged
