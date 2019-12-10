@@ -259,3 +259,8 @@ autocmd FileChangedShellPost *
 " Maps to show 1 or 2 sign column
 nnoremap <Leader>1 :set signcolumn=yes:1<CR>
 nnoremap <Leader>2 :set signcolumn=yes:2<CR>
+
+" Mapping for delete not cut
+nnoremap <leader>d "_d
+xnoremap <leader>d "_d
+xnoremap <leader>p "_dP
