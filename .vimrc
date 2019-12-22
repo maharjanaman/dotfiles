@@ -25,6 +25,7 @@ Plug 'sheerun/vim-polyglot'
 Plug 'metakirby5/codi.vim'
 Plug 'tpope/vim-obsession'
 Plug 'dhruvasagar/vim-prosession'
+Plug 'Yggdroot/indentLine'
 
 call plug#end()
 
@@ -113,8 +114,8 @@ syntax on
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
 
 " COC Config
-let g:coc_status_error_sign='❌ '
-let g:coc_status_warning_sign='⚠️  '
+let g:coc_status_error_sign='✘'
+let g:coc_status_warning_sign=''
 
 let g:coc_global_extensions = [
   \ 'coc-pairs',
