@@ -100,11 +100,11 @@ source $ZSH/oh-my-zsh.sh
 # export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='nvim'
+else
+  export EDITOR='nvim'
+fi
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -152,7 +152,11 @@ source "$HOME/.vim/plugged/gruvbox/gruvbox_256palette.sh"
 export PATH="/usr/local/sbin:$PATH"
 export LC_ALL=en_US.UTF-8
 export PATH=~/Library/Python/3.7/bin/:$PATH
+
+# Alias for handling git on dotfiles
 alias dotfiles='/usr/bin/git --git-dir=/Users/i8e4/.dotfiles/ --work-tree=/Users/i8e4'
+
+# Alias for tmux
 alias t="tmux"
 alias ta="t a"
 alias tls="t ls"
