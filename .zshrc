@@ -153,3 +153,6 @@ export PATH="/usr/local/sbin:$PATH"
 export LC_ALL=en_US.UTF-8
 export PATH=~/Library/Python/3.7/bin/:$PATH
 alias dotfiles='/usr/bin/git --git-dir=/Users/i8e4/.dotfiles/ --work-tree=/Users/i8e4'
+alias t="tmux"
+alias ta="t a"
+alias tls="t ls"
