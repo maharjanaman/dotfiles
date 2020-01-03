@@ -160,3 +160,6 @@ alias dotfiles='/usr/bin/git --git-dir=/Users/i8e4/.dotfiles/ --work-tree=/Users
 alias t="tmux"
 alias ta="t a"
 alias tls="t ls"
+
+# From tmuxp cli output
+export DISABLE_AUTO_TITLE='true'
