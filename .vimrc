@@ -53,7 +53,7 @@ set mouse=a
 set cursorline
 
 " Custom maps
-nnoremap <silent> <leader>uh :nohlsearch<CR>
+nnoremap <silent> <leader>nh :nohlsearch<CR>
 
 " Nerdtree configs
 let g:NERDTreeWinPos="right"
