@@ -52,11 +52,23 @@ set mouse=a
 " Manage cursor line
 set cursorline
 
+" Set a map leader
+let mapleader=','
+
+" Map to switch tab right
+map <leader>] :tabn<CR>
+
+" Map to switch tab left
+map <leader>[ :tabN<CR>
+
 " Custom maps
 nnoremap <silent> <leader>nh :nohlsearch<CR>
 
+" Calling LeadingSpaceDisable when nerdtree is loaded
+autocmd BufEnter NERD_tree* :LeadingSpaceDisable
+
 " Nerdtree configs
-let g:NERDTreeWinPos="right"
+let g:NERDTreeWinPos='right'
 let NERDTreeShowHidden=1
 let g:NERDTreeIgnore=['^node_modules$']
 
@@ -81,6 +93,7 @@ let g:lightline = {
 	\            [ 'fileformat', 'fileencoding', 'filetype' ] ]
   \ },
   \ 'component_function': {
+  \   'filename': 'LightlineFilename',
   \   'cocstatus': 'coc#status', 
   \   'currentfunction': 'CocCurrentFunction',
   \   'gitbranch': 'fugitive#head'
@@ -88,6 +101,15 @@ let g:lightline = {
   \ 'separator': { 'left': "\ue0b0", 'right': "\ue0b2" },
   \ 'subseparator': { 'left': "\ue0b1", 'right': "\ue0b3" }
   \ }
+
+function! LightlineFilename()
+  let root = fnamemodify(get(b:, 'git_dir'), ':h')
+  let path = expand('%:p')
+  if path[:len(root)-1] ==# root
+    return path[len(root)+1:]
+  endif
+  return expand('%')
+endfunction
 
 " Theme configs
 if (has("termguicolors"))
