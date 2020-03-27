@@ -26,6 +26,7 @@ Plug 'metakirby5/codi.vim'
 Plug 'tpope/vim-obsession'
 Plug 'dhruvasagar/vim-prosession'
 Plug 'Yggdroot/indentLine'
+Plug 'maharjanaman/vim_es7_javascript_react_snippets'
 
 call plug#end()
 
@@ -34,6 +35,11 @@ autocmd VimEnter *
   \ if !empty(filter(copy(g:plugs), '!isdirectory(v:val.dir)'))
   \|  PlugInstall | q
   \| endif
+
+" Enable mode shapes, Cursor highlight and blinking
+:set guicursor=n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50
+  \,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor
+  \,sm:block-blinkwait175-blinkoff150-blinkon175
 
 " Enable relative line number
 set nu rnu
@@ -47,6 +53,8 @@ set laststatus=2
 set noshowmode
 " Send all vim registers to the mac clipboard
 set clipboard=unnamed
+" Assume the terminal is fast
+set ttyfast
 " Enable mouse in all modes
 set mouse=a
 " Manage cursor line
@@ -89,11 +97,10 @@ let g:lightline = {
   \   'left': [ [ 'mode', 'paste' ],
   \             [ 'cocstatus', 'currentfunction', 'gitbranch', 'readonly', 'filename', 'modified' ] ],
   \   'right': [ [ 'lineinfo' ],
-	\            [ 'percent' ],
-	\            [ 'fileformat', 'fileencoding', 'filetype' ] ]
+	\              [ 'percent' ],
+	\              [ 'fileformat', 'fileencoding', 'filetype' ] ]
   \ },
   \ 'component_function': {
-  \   'filename': 'LightlineFilename',
   \   'cocstatus': 'coc#status', 
   \   'currentfunction': 'CocCurrentFunction',
   \   'gitbranch': 'fugitive#head'
@@ -102,6 +109,8 @@ let g:lightline = {
   \ 'subseparator': { 'left': "\ue0b1", 'right': "\ue0b3" }
   \ }
 
+" Currently not in use
+" Use this show git folder path on lightline
 function! LightlineFilename()
   let root = fnamemodify(get(b:, 'git_dir'), ':h')
   let path = expand('%:p')
@@ -135,9 +144,6 @@ let g:nord_cursor_line_number_background=1
 " Added here to make syntax highlight work with gruvbox
 syntax on
 
-" IndentLine enable leading spaces
-let g:indentLine_leadingSpaceEnabled=1
-
 " For COC Prettier
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
 
@@ -146,12 +152,27 @@ let g:coc_status_error_sign='✘'
 let g:coc_status_warning_sign=''
 
 let g:coc_global_extensions = [
+  \ 'coc-snippets',
   \ 'coc-pairs',
   \ 'coc-eslint', 
   \ 'coc-prettier', 
   \ 'coc-json', 
   \ 'coc-tsserver'
   \ ]
+
+" Make <tab> used for trigger completion, completion confirm, snippet expand and jump like VSCode.
+inoremap <silent><expr> <TAB>
+  \ pumvisible() ? coc#_select_confirm() :
+  \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
+  \ <SID>check_back_space() ? "\<TAB>" :
+  \ coc#refresh()
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+let g:coc_snippet_next = '<tab>'
 
 " From COC Readme
 " if hidden is not set, TextEdit might fail.
