@@ -144,6 +144,12 @@ let g:nord_cursor_line_number_background=1
 " Added here to make syntax highlight work with gruvbox
 syntax on
 
+" Show horizontal indent line
+let g:indentLine_leadingSpaceEnabled=1
+
+" Specify a character to show for leading spaces
+let g:indentLine_leadingSpaceChar='-'
+
 " For COC Prettier
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
 
