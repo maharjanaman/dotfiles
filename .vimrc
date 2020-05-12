@@ -69,6 +69,9 @@ map <leader>] :tabn<CR>
 " Map to switch tab left
 map <leader>[ :tabN<CR>
 
+" Map to switch to last tab
+map <leader>tl :tablast<CR>
+
 " Custom maps
 nnoremap <silent> <leader>nh :nohlsearch<CR>
 
