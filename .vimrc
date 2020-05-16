@@ -339,3 +339,12 @@ command! -bang -nargs=* Rg
 " If in git directory, show only files that are committed, staged, or unstaged
 " else use regular :Files
 nnoremap <expr> <C-p> (len(system('git rev-parse')) ? ':Files' : ':GFiles --exclude-standard --others --cached')."\<cr>"
+
+" Fugitive Git status
+nmap <leader>gs :G<CR>
+
+" Fugitive accept left code in merge conflict dv
+nmap <leader>gf :diffget //2<CR>
+
+" Fugitive accept right code in merge conflict dv
+nmap <leader>gj :diffget //3<CR>
