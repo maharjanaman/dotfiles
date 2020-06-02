@@ -3,10 +3,6 @@ set encoding=UTF-8
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'arcticicestudio/nord-vim'
-Plug 'patstockwell/vim-monokai-tasty'
-Plug 'dracula/vim',{'as':'dracula'}
-Plug 'lifepillar/vim-solarized8'
 Plug 'gruvbox-community/gruvbox'
 Plug 'itchyny/lightline.vim'
 Plug 'https://github.com/scrooloose/nerdtree.git'
@@ -123,12 +119,7 @@ function! LightlineFilename()
   return expand('%')
 endfunction
 
-" Theme configs
-if (has("termguicolors"))
-  set termguicolors
-endif
-
-" For light/dark gruvbox/solarized8
+" For light/dark in gruvbox
 set background=dark
 
 " Gruvbox has 'hard', 'medium' (default) and 'soft' contrast options.
@@ -140,9 +131,6 @@ colorscheme gruvbox
 "
 " Add this to your ~/.profile file:
 "   source "$HOME/.vim/plugged/gruvbox/gruvbox_256palette.sh"
-
-" Nord Config
-let g:nord_cursor_line_number_background=1
 
 " Added here to make syntax highlight work with gruvbox
 syntax on
