@@ -4,6 +4,7 @@ set encoding=UTF-8
 call plug#begin('~/.vim/plugged')
 
 Plug 'gruvbox-community/gruvbox'
+Plug 'arcticicestudio/nord-vim'
 Plug 'itchyny/lightline.vim'
 Plug 'https://github.com/scrooloose/nerdtree.git'
 Plug 'scrooloose/nerdcommenter'
@@ -55,6 +56,8 @@ set ttyfast
 set mouse=a
 " Manage cursor line
 set cursorline
+" Necesary for lots of cool vim things
+set nocompatible
 
 " Set a map leader
 let mapleader=','
@@ -118,6 +121,10 @@ function! LightlineFilename()
   endif
   return expand('%')
 endfunction
+
+if ($TERM_PROGRAM isnot# 'Apple_Terminal')
+  set termguicolors
+endif
 
 " For light/dark in gruvbox
 set background=dark
