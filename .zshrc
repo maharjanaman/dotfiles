@@ -123,6 +123,9 @@ export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 
+# Flutter Path
+export PATH="$PATH:$HOME/SDKs/flutter/bin"
+
 # Sourcing syntax highlighting. This was install using homebrew
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
@@ -136,7 +139,7 @@ source "$HOME/.vim/plugged/gruvbox/gruvbox_256palette.sh"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export PATH="/usr/local/sbin:$PATH"
-export PATH=~/Library/Python/3.7/bin/:$PATH
+export PATH=~/Library/Python/3.8/bin/:$PATH
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
