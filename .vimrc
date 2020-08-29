@@ -346,4 +346,7 @@ else
 
   " Fugitive accept right code in merge conflict dv
   nmap <leader>gj :diffget //3<CR>
+
+  " Close all buffers except the current buffer
+  command! BufOnly execute '%bdelete|edit #|normal `"'
 endif
