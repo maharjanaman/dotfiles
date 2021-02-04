@@ -108,7 +108,6 @@ fi
 export NVM_DIR="$HOME/.nvm"
 [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
 [ -s "/usr/local/opt/nvm/etc/bash_completion" ] && . "/usr/local/opt/nvm/etc/bash_completion"  # This loads nvm bash_completion
-#. "$(brew --prefix nvm)/nvm.sh"
 
 # Redefine prompt_context for hiding user@hostname
 # prompt_context() {
@@ -158,3 +157,9 @@ alias tls="t ls"
 export DISABLE_AUTO_TITLE='true'
 
 export LC_ALL=en_US.UTF-8
+
+# For pyenv to work
+# Commenting these as pyenv is currently uninstalled
+# export PYTHON_CONFIGURE_OPTS="--with-openssl=$(brew --prefix openssl)"
+# export CFLAGS="-I$(brew --prefix zlib)/include -I$(brew --prefix sqlite)/include -I$(brew --prefix bzip2)/include"
+# export LDFLAGS="-L$(brew --prefix zlib)/lib -L$(brew --prefix sqlite)/lib -L$(brew --prefix bzip2)/lib"
