@@ -1,0 +1,13 @@
+{
+  "diagnostic.errorSign": "✘",
+  "diagnostic.warningSign": "",
+  "suggest.noselect": false,
+  "coc.preferences.formatOnSaveFiletypes": [
+    "json",
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "typescript.tsx"
+  ]
+}
