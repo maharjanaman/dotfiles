@@ -117,14 +117,14 @@ eval "$(fnm env)"
 # To hide error while running brew doctor due to pyenv
 alias brew='env PATH="${PATH//$(pyenv root)\/shims:/}" brew'
 
-# Created by `pipx` on 2021-03-09 18:21:10
-export PATH="$PATH:/Users/i8e4/.local/bin"
-
-# pipx completions
-autoload -U bashcompinit
-bashcompinit
-
-eval "$(register-python-argcomplete pipx)"
+## Created by `pipx` on 2021-03-09 18:21:10
+# export PATH="$PATH:/Users/i8e4/.local/bin"
+#
+## pipx completions
+# autoload -U bashcompinit
+# bashcompinit
+#
+# eval "$(register-python-argcomplete pipx)"
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
