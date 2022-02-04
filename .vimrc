@@ -83,7 +83,7 @@ else
   " Nerdtree configs
   let g:NERDTreeWinPos='right'
   let NERDTreeShowHidden=1
-  let g:NERDTreeIgnore=['^node_modules$']
+  let g:NERDTreeIgnore=['^node_modules$', '.DS_Store']
 
   " Add spaces after comment delimiters by default
   let g:NERDSpaceDelims=1
@@ -109,12 +109,19 @@ else
     \   'cocstatus': 'coc#status',
     \   'currentfunction': 'CocCurrentFunction',
     \   'gitbranch': 'fugitive#head'
-    \ }
+    \ },
+    \ 'separator': { 'left': "\ue0b0", 'right': "\ue0b2" },
+    \ 'subseparator': { 'left': "\ue0b1", 'right': "\ue0b3" },
+    \ 'tabline_separator': { 'left': "\ue0b0", 'right': "\ue0b2" },
+    \ 'tabline_subseparator': { 'left': "\ue0b1", 'right': "\ue0b3" }
     \ }
   
   " Use this to show arrow separator
-    "\ 'separator': { 'left': "\ue0b0", 'right': "\ue0b2" },
-    "\ 'subseparator': { 'left': "\ue0b1", 'right': "\ue0b3" }
+    " \ 'separator': { 'left': "\ue0b0", 'right': "\ue0b2" }
+    " \ 'subseparator': { 'left': "\ue0b1", 'right': "\ue0b3" }
+    " \ 'tabline_separator': { 'left': "\ue0b0", 'right': "\ue0b2" }
+    " \ 'tabline_subseparator': { 'left': "\ue0b1", 'right': "\ue0b3" }
+
 
   " Currently not in use
   " Use this show git folder path on lightline

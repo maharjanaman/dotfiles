@@ -118,7 +118,7 @@ export CHROME_EXECUTABLE="/Applications/Brave Browser.app/Contents/MacOS/Brave B
 
 # fnm
 export PATH="/Users/i8e4/.fnm:$PATH"
-eval "$(fnm env)"
+eval "$(fnm env --use-on-cd)"
 
 # To hide error while running brew doctor due to pyenv
 alias brew='env PATH="${PATH//$(pyenv root)\/shims:/}" brew'
