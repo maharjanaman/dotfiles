@@ -26,7 +26,7 @@ else
   Plug 'dhruvasagar/vim-prosession'
   Plug 'Yggdroot/indentLine'
   Plug 'ryanoasis/vim-devicons'
-  Plug 'dsznajder/vscode-es7-javascript-react-snippets', { 'do': 'yarn install --frozen-lockfile && yarn compile' }
+  Plug 'honza/vim-snippets'
 
   call plug#end()
 
