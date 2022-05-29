@@ -108,7 +108,7 @@ else
     \ 'component_function': {
     \   'cocstatus': 'coc#status',
     \   'currentfunction': 'CocCurrentFunction',
-    \   'gitbranch': 'fugitive#head'
+    \   'gitbranch': 'FugitiveHead'
     \ },
     \ 'separator': { 'left': "\ue0b0", 'right': "\ue0b2" },
     \ 'subseparator': { 'left': "\ue0b1", 'right': "\ue0b3" },
@@ -143,6 +143,19 @@ else
 
   " Gruvbox has 'hard', 'medium' (default) and 'soft' contrast options.
   let g:gruvbox_contrast_dark='hard'
+
+  augroup update_bat_theme
+    autocmd!
+    autocmd colorscheme * call ToggleBatEnvVar()
+  augroup end
+
+  function ToggleBatEnvVar()
+    if (&background == "light")
+        let $BAT_THEME='gruvbox-light'
+    else
+        let $BAT_THEME='gruvbox-dark'
+    endif
+  endfunction
 
   colorscheme gruvbox
   " For Gruvbox to look correct in terminal Vim you'll want to source a palette
