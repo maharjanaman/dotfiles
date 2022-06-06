@@ -27,6 +27,7 @@ else
   Plug 'Yggdroot/indentLine'
   Plug 'ryanoasis/vim-devicons'
   Plug 'honza/vim-snippets'
+  Plug 'dracula/vim', {'as': 'dracula'}
 
   call plug#end()
 
@@ -157,6 +158,9 @@ else
     endif
   endfunction
 
+  " Active Cursor Line Number Background
+  let g:nord_cursor_line_number_background=1
+
   colorscheme gruvbox
   " For Gruvbox to look correct in terminal Vim you'll want to source a palette
   " script that comes with the Gruvbox plugin.
@@ -164,8 +168,8 @@ else
   " Add this to your ~/.profile file:
   "   source "$HOME/.vim/plugged/gruvbox/gruvbox_256palette.sh"
 
-  " Added here to make syntax highlight work with gruvbox
-  syntax on
+  " Added here to make syntax highlight work with themes
+  syntax enable
 
   " Show horizontal indent line
   let g:indentLine_leadingSpaceEnabled=1
