@@ -1,0 +1,8 @@
+require('maharjanaman.telescope')
+require('maharjanaman.lsp')
+require('maharjanaman.treesitter')
+require('maharjanaman.lualine')
+require('maharjanaman.nvimtree')
+require('maharjanaman.comment')
+require('maharjanaman.autosession')
+require('maharjanaman.indentbline')

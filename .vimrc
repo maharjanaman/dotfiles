@@ -1,3 +1,12 @@
+"
+"
+" ***NOTE***
+" This is old configurations which was compatible with
+" both vim and neovim. A new configuration has been setup
+" using lsp, treesitter, and other cool stuff for better
+" performance and is hosted on ~/.config/nvim/
+"
+"
 scriptencoding UTF-8
 set encoding=UTF-8
 

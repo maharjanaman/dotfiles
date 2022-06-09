@@ -158,6 +158,9 @@ bindkey '^ ' autosuggest-accept
 # For better color output of gruvbox
 source "$HOME/.vim/plugged/gruvbox/gruvbox_256palette.sh"
 
+# Alias for Vim
+alias vim="nvim"
+
 # Alias for tmux
 alias t="tmux"
 alias ta="t a"
