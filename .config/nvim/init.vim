@@ -79,12 +79,6 @@ colorscheme gruvbox-material
 " Set a map leader
 let mapleader=' '
 
-" For easy navigation
-" nnoremap <silent> <leader>h :wincmd h<Cr>
-" nnoremap <silent> <leader>j :wincmd j<Cr>
-" nnoremap <silent> <leader>k :wincmd k<Cr>
-" nnoremap <silent> <leader>l :wincmd l<Cr>
-
 " Map to switch tab right
 nnoremap <silent> <leader>] :tabn<CR>
 
