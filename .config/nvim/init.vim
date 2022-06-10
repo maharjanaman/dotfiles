@@ -3,6 +3,7 @@ set encoding=UTF-8
 set tabstop=2 softtabstop=2
 set shiftwidth=2
 set expandtab
+set autoindent
 set smartindent
 set nu rnu
 set nowrap
@@ -44,7 +45,6 @@ Plug 'L3MON4D3/LuaSnip'
 Plug 'saadparwaiz1/cmp_luasnip'
 Plug 'rafamadriz/friendly-snippets'
 Plug 'windwp/nvim-autopairs'
-Plug 'editorconfig/editorconfig-vim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzf-native.nvim', {'do': 'make'}
