@@ -33,6 +33,7 @@ set shortmess+=c
 call plug#begin('~/.config/nvim/plugged')
 
 Plug 'sainnhe/gruvbox-material'
+Plug 'luisiacc/gruvbox-baby', {'branch': 'main'}
 Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'jose-elias-alvarez/null-ls.nvim'
@@ -67,12 +68,17 @@ call plug#end()
 lua require('maharjanaman')
 
 " --- Colors ---
+
+" Gruvbox Material Configs
 " For light/dark in gruvbox
 set background=dark
+
 " Gruvbox has 'hard', 'medium' (default) and 'soft' contrast options.
 let g:gruvbox_material_background='hard'
+
 " For better performance
 let g:gruvbox_material_better_performance=1
+
 colorscheme gruvbox-material
 
 " --- Additional Mods ---
