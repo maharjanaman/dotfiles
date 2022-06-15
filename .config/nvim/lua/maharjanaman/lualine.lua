@@ -16,7 +16,7 @@ fidget.setup{
 lualine.setup {
   options = {
     icons_enabled = true,
-    theme = 'auto',
+    theme = 'tokyonight',
     component_separators = { left = '', right = ''},
     section_separators = { left = '', right = ''},
     disabled_filetypes = {'NvimTree'},
@@ -27,24 +27,27 @@ lualine.setup {
     lualine_a = {'mode'},
     lualine_b = {
       'FugitiveHead',
-      'diff',
+      {
+        'diff',
+        colored = true,
+        diff_color = {
+          added = {
+            fg = '#449dab',
+            bg = '#3b4261',
+          },
+          modified = {
+            fg = '#6183bb',
+            bg = '#3b4261',
+          },
+          removed = {
+            fg = '#914c54',
+            bg = '#3b4261',
+          },
+        },
+      },
       {
         'diagnostics',
         sources={'nvim_diagnostic'},
-        diagnostics_color = {
-          error = {
-            fg = '#ea6962',
-          },
-          warn = {
-            fg = '#d8a657',
-          },
-          info = {
-            fg = '#7daea3',
-          },
-          hint = {
-            fg = '#89b482',
-          },
-        },
         symbols = { error = '✘ ', warn = ' ', info = ' ', hint = ' '},
         colored = true,
       },
@@ -54,6 +57,11 @@ lualine.setup {
         'filename',
         file_status = true, -- displays file status (readonly status, modified status)
         path = 0, -- 0 = just filename, 1 = relative path, 2 = absolute path
+        symbols = {
+          modified = ' [+]',      -- Text to show when the file is modified.
+          readonly = ' [-]',      -- Text to show when the file is non-modifiable or readonly.
+          unnamed = '[No Name]', -- Text to show for unnamed buffers.
+        }
       },
     },
     lualine_x = {

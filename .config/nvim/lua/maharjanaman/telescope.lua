@@ -3,7 +3,7 @@ local actions = require('telescope.actions')
 
 telescope.setup {
   defaults = {
-    color_devicons = false,
+    color_devicons = true,
     file_ignore_patterns = { "^.git/" },
     mappings = {
       i = {
