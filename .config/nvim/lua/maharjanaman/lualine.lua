@@ -32,15 +32,15 @@ lualine.setup {
         colored = true,
         diff_color = {
           added = {
-            fg = '#449dab',
+            fg = '#41a6b5',
             bg = '#3b4261',
           },
           modified = {
-            fg = '#6183bb',
+            fg = '#e0af68',
             bg = '#3b4261',
           },
           removed = {
-            fg = '#914c54',
+            fg = '#db4b4b',
             bg = '#3b4261',
           },
         },
