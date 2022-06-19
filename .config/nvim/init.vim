@@ -32,7 +32,7 @@ set shortmess+=c
 " --- Plugins ---
 call plug#begin('~/.config/nvim/plugged')
 
-Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
+Plug 'folke/tokyonight.nvim', { 'branch': 'main', 'frozen': 1 }
 Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'jose-elias-alvarez/null-ls.nvim'
@@ -50,7 +50,7 @@ Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzf-native.nvim', {'do': 'make'}
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
-Plug 'airblade/vim-gitgutter'
+Plug 'lewis6991/gitsigns.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'kyazdani42/nvim-tree.lua'
 Plug 'nvim-lualine/lualine.nvim'
@@ -67,7 +67,9 @@ call plug#end()
 lua require('maharjanaman')
 
 " --- Colors ---
-let g:tokyonight_style = "night"
+let g:tokyonight_style='night'
+let g:tokyonight_italic_functions=1
+let g:tokyonight_lualine_bold=1
 
 colorscheme tokyonight
 

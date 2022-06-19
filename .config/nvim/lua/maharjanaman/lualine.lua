@@ -16,35 +16,18 @@ fidget.setup{
 lualine.setup {
   options = {
     icons_enabled = true,
-    theme = 'tokyonight',
+    theme = 'auto',
     component_separators = { left = '', right = ''},
     section_separators = { left = '', right = ''},
     disabled_filetypes = {'NvimTree'},
     always_divide_middle = false,
-    globalstatus = true,
+    globalstatus = false,
   },
   sections = {
     lualine_a = {'mode'},
     lualine_b = {
       'FugitiveHead',
-      {
-        'diff',
-        colored = true,
-        diff_color = {
-          added = {
-            fg = '#41a6b5',
-            bg = '#3b4261',
-          },
-          modified = {
-            fg = '#e0af68',
-            bg = '#3b4261',
-          },
-          removed = {
-            fg = '#db4b4b',
-            bg = '#3b4261',
-          },
-        },
-      },
+      'diff',
       {
         'diagnostics',
         sources={'nvim_diagnostic'},

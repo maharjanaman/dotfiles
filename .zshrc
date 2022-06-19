@@ -174,3 +174,6 @@ fi
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# For setting tmux-256color
+export TERMINFO_DIRS=$TERMINFO_DIRS:$HOME/.local/share/terminfo
