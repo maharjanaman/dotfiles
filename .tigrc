@@ -1,0 +1,3 @@
+color cursor 16 149 bold
+color title-blur 111 16 bold
+color title-focus 111 16 bold reverse
