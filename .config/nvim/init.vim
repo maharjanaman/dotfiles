@@ -54,6 +54,7 @@ Plug 'lewis6991/gitsigns.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'kyazdani42/nvim-tree.lua'
 Plug 'nvim-lualine/lualine.nvim'
+Plug 'akinsho/bufferline.nvim', {'tag': 'v2.*'}
 Plug 'j-hui/fidget.nvim'
 Plug 'numToStr/Comment.nvim'
 Plug 'christoomey/vim-tmux-navigator'
@@ -79,10 +80,10 @@ colorscheme tokyonight
 let mapleader=' '
 
 " Map to switch tab right
-nnoremap <silent> <leader>] :tabn<CR>
+nnoremap <silent> <leader>[ :BufferLineCyclePrev<CR>
 
 " Map to switch tab left
-nnoremap <silent> <leader>[ :tabN<CR>
+nnoremap <silent> <leader>] :BufferLineCycleNext<CR>
 
 " Map to switch to last tab
 nnoremap <silent> <leader>tl :tablast<CR>
