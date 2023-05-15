@@ -4,7 +4,10 @@ bufferline.setup {
   options = {
     mode = 'tabs',
     numbers = 'ordinal',
-    indicator_icon = '▎',
+    indicator = {
+      icon = '▎',
+      style = 'icon',
+    },
     buffer_close_icon = '',
     modified_icon = '●',
     close_icon = '',
@@ -24,28 +27,30 @@ bufferline.setup {
     color_icons = false,
     show_buffer_icons = false,
     show_buffer_close_icons = false,
-    show_buffer_default_icon = false, -- whether or not an unrecognised filetype should show a default icon
     show_close_icon = false,
     show_tab_indicators = false,
     enforce_regular_tabs = false,
     always_show_bufferline = false,
     separator_style = {'', ''},
+    sort_by = 'tabs'
   },
   highlights = {
+    -- Dark -> '#16161e' | Light -> '#e9e9ec'
     fill = {
-      guibg = "#16161e"
+      bg = '#e9e9ec',
     },
     background = {
-      guibg = "#16161e"
+      bg = '#e9e9ec',
     },
     buffer_selected = {
-      gui = 'bold'
+      italic = false,
+
     },
     numbers = {
-      guibg = "#16161e"
+      bg = '#e9e9ec',
     },
     numbers_selected = {
-      gui = 'bold'
+      italic = false,
     }
   }
 }

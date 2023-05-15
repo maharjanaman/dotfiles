@@ -177,3 +177,7 @@ fi
 
 # For setting tmux-256color
 export TERMINFO_DIRS=$TERMINFO_DIRS:$HOME/.local/share/terminfo
+
+# begin appcenter completion
+. <(appcenter --completion)
+# end appcenter completion

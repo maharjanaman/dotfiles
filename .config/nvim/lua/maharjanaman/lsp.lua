@@ -80,7 +80,7 @@ function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
   return orig_util_open_floating_preview(contents, syntax, opts, ...)
 end
 
-local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 -- Mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
@@ -116,8 +116,8 @@ local on_attach = function(client, bufnr)
   vim.keymap.set('n', '<leader>f', vim.lsp.buf.formatting, bufopts)
 
   -- Disable Autoformat
-  client.resolved_capabilities.document_formatting = false
-  client.resolved_capabilities.document_range_formatting = false
+  client.server_capabilities.document_formatting = false
+  client.server_capabilities.document_range_formatting = false
 end
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
@@ -168,7 +168,7 @@ null_ls.setup({
         buffer = bufnr,
         callback = function()
           -- on 0.8, you should use vim.lsp.buf.format({ bufnr = bufnr }) instead
-          vim.lsp.buf.formatting_sync()
+          vim.lsp.buf.format()
         end,
       })
     end
